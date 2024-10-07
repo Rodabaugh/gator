@@ -55,7 +55,8 @@ func main() {
 	cmds.register("login", handlerLogin)
 	cmds.register("register", handlerRegister)
 	cmds.register("reset", handlerReset)
-	cmds.register("users", handlerUsers)
+	cmds.register("users", handlerListUsers)
+	cmds.register("agg", handlerAgg)
 
 	// Look up and run the handler
 	if err := cmds.run(appState, cmd); err != nil {
