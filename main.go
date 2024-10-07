@@ -60,7 +60,7 @@ func main() {
 	cmds.register("addfeed", handlerAddFeed)
 	cmds.register("feeds", handlerFeeds)
 	cmds.register("follow", handlerFollow)
-	cmds.register("following", handlerFollowing)
+	cmds.register("following", handlerListFeedFollows)
 
 	// Look up and run the handler
 	if err := cmds.run(appState, cmd); err != nil {
