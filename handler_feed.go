@@ -9,17 +9,12 @@ import (
 	"github.com/google/uuid"
 )
 
-func handlerAddFeed(s *state, cmd command) error {
+func handlerAddFeed(s *state, cmd command, currentUser database.User) error {
 	if len(cmd.arguments) != 2 {
 		return fmt.Errorf("usage: %s <name> <url>", cmd.name)
 	}
 	name := cmd.arguments[0]
 	url := cmd.arguments[1]
-
-	currentUser, err := s.db.GetUser(context.Background(), s.config.CurrentUserName)
-	if err != nil {
-		return err
-	}
 
 	currentTime := time.Now()
 
@@ -35,7 +30,7 @@ func handlerAddFeed(s *state, cmd command) error {
 		return fmt.Errorf("couldn't create feed: %w", err)
 	}
 
-	err = handlerFollow(s, command{arguments: []string{feed.Url}})
+	err = handlerFollow(s, command{arguments: []string{feed.Url}}, currentUser)
 	if err != nil {
 		return err
 	}
