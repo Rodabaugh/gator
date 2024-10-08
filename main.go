@@ -85,16 +85,15 @@ func middlewareLoggedIn(handler func(s *state, cmd command, user database.User) 
 
 func handlerHelp(s *state, cmd command) error {
 	fmt.Println("Available Commands")
-	fmt.Println("* login")
 	fmt.Println("* register")
-	fmt.Println("* reset")
+	fmt.Println("* login")
 	fmt.Println("* users")
-	fmt.Println("* agg")
 	fmt.Println("* addfeed")
 	fmt.Println("* feeds")
 	fmt.Println("* follow")
 	fmt.Println("* following")
 	fmt.Println("* unfollow")
+	fmt.Println("* agg")
 	fmt.Println("* browse")
 	fmt.Println("* help")
 	return nil
