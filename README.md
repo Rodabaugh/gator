@@ -6,7 +6,7 @@ This project was created for the boot.dev course. Gator is a basic RSS feed aggr
 
 You'll need to have Postgres and Go installed on your system.
 
-Install gator using `go install github.com/Rodabaugh/gator`
+Install gator using `go install github.com/Rodabaugh/gator@latest`
 
 In your home directory, create a config file called ".gatorconfig.json"
 
