@@ -16,7 +16,7 @@ It should contain something like this:
 
 Typically:
 
-`{"db_url":"postgres://postgres:postgres@localhost:5432/gator?sslmode=disable"}`
+`{"db_url":"postgres://username:password@localhost:5432/gator?sslmode=disable"}`
 
 # Usage
 
